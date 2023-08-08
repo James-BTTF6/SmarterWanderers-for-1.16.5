@@ -28,7 +28,6 @@ public class BiomeMapCreator {
         String markerKey = "biome_red_x";
         mapData.decorations.put(markerKey, marker);
         mapData.setDirty();
-        CompoundNBT mapNBT = new CompoundNBT();
         CompoundNBT decorationNBT = new CompoundNBT();
         ListNBT decorationList = new ListNBT();
         Map.Entry<String, MapDecoration> entry = mapData.decorations.entrySet().iterator().next();
