@@ -22,20 +22,12 @@ public class BiomeMapCreator {
         stack.getOrCreateTag().putInt("map", nextMapId);
         MapData mapData = FilledMapItem.getOrCreateSavedData(stack, world);
         mapData.setProperties(targetPos.getX(), targetPos.getZ(), 4, true, true, World.OVERWORLD);
-        LogManager.getLogger().info("targetPos X: "+ targetPos.getX());
-        LogManager.getLogger().info("targetPos Z: "+ targetPos.getZ());
-        LogManager.getLogger().info("mapData X: "+ mapData.x);
-        LogManager.getLogger().info("mapData Z: "+ mapData.z);
         byte x = (byte) ((targetPos.getX() - mapData.x)/4);
         byte z = (byte) ((targetPos.getZ() - mapData.z)/4);
-        LogManager.getLogger().info("byte x "+ x);
-        LogManager.getLogger().info("byte z "+ z);
-        LogManager.getLogger().info("Original mapID:" + mapData.getId());
         MapDecoration marker = new MapDecoration(MapDecoration.Type.RED_X, x, z, (byte) 0, null);
         String markerKey = "biome_red_x";
         mapData.decorations.put(markerKey, marker);
         mapData.setDirty();
-        LogManager.getLogger().info(stack.getTag().toString());
         CompoundNBT mapNBT = new CompoundNBT();
         CompoundNBT decorationNBT = new CompoundNBT();
         ListNBT decorationList = new ListNBT();
@@ -47,6 +39,5 @@ public class BiomeMapCreator {
         decorationNBT.putInt("rot", entry.getValue().getRot());
         decorationList.add(decorationNBT);
         stack.getOrCreateTag().put("Decorations", decorationList);
-        LogManager.getLogger().info("New NBT:" + stack.getTag().toString());
     }
 }
