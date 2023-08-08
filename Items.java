@@ -16,8 +16,6 @@ public class Items {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "smarterwanderers");
 
-    //BlockItems
-    //Polished_cobble
     public static final RegistryObject<Item> MUSHROOM_MAP = ITEMS.register("mushroom_map", () -> new MushroomExplorerMapItem(new Item.Properties()));
-    public static final RegistryObject<BlockItem> POLISHED_COBBLESTONE_ITEM = ITEMS.register("polished_cobblestone", () -> new BlockItem((Block)Blocks.POLISHED_COBBLESTONE.get(), new Item.Properties()));
+
 }
