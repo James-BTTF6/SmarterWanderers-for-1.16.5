@@ -35,12 +35,4 @@ public class MushroomExplorerMapItem extends FilledMapItem {
             }
         }
     }
-    @Override
-    public ActionResultType useOn(ItemUseContext context) {
-        LogManager.getLogger().info("NBT tag:" + context.getItemInHand().getTag().toString());
-        MapData mapData = FilledMapItem.getOrCreateSavedData(context.getItemInHand(), context.getLevel());
-        mapData.load(context.getItemInHand().getTag());
-        mapData.setDirty();
-        return ActionResultType.SUCCESS;
-    }
 }
